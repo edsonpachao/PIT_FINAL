@@ -7,6 +7,9 @@ echo form_open('customers/save/'.$person_info->person_id,array('id'=>'customer_f
 <legend><?php echo $this->lang->line("customers_basic_information"); ?></legend>
 <?php $this->load->view("people/form_basic_info"); ?>
 
+
+
+<!--
 <div class="field_row clearfix">	
 <?php echo form_label($this->lang->line('customers_company_name').':', 'company_name'); ?>
 	<div class='form_field'>
@@ -16,6 +19,9 @@ echo form_open('customers/save/'.$person_info->person_id,array('id'=>'customer_f
 	);?>
 	</div>
 </div>
+-->
+
+
 
 <div class="field_row clearfix">	
 <?php echo form_label($this->lang->line('customers_account_number').':', 'account_number'); ?>
@@ -24,17 +30,24 @@ echo form_open('customers/save/'.$person_info->person_id,array('id'=>'customer_f
 		'name'=>'account_number',
 		'id'=>'account_number',
 		'class'=>'account_number',
+		'disabled' => 'true',
 		'value'=>$person_info->account_number)
 	);?>
 	</div>
 </div>
 
+
+
+<!--
 <div class="field_row clearfix">	
 <?php echo form_label($this->lang->line('customers_taxable').':', 'taxable'); ?>
 	<div class='form_field'>
 	<?php echo form_checkbox('taxable', '1', $person_info->taxable == '' ? TRUE : (boolean)$person_info->taxable);?>
 	</div>
 </div>
+-->
+
+
 
 <?php
 echo form_submit(array(
@@ -88,17 +101,31 @@ $(document).ready(function()
  		wrapper: "li",
 		rules: 
 		{
+			gender: "required",
 			first_name: "required",
 			last_name: "required",
+			phone_number: "required",
+			address_1: "required",
+			city: "required",
+			country: "required",
     		email: "email",
+    		email: "required",
     		account_number: { account_number: true }
    		},
 		messages: 
 		{
-     		first_name: "<?php echo $this->lang->line('common_first_name_required'); ?>",
-     		last_name: "<?php echo $this->lang->line('common_last_name_required'); ?>",
-     		email: "<?php echo $this->lang->line('common_email_invalid_format'); ?>"
+			gender: "<?php echo $this->lang->line('common_tpcustomer_required'); ?>",
+			first_name: "<?php echo $this->lang->line('common_first_name_required'); ?>",
+			last_name: "<?php echo $this->lang->line('common_last_name_required'); ?>",
+			phone_number: "<?php echo $this->lang->line('common_phone_number_required'); ?>",
+			address_1: "<?php echo $this->lang->line('common_address_1_required'); ?>",
+			city: "<?php echo $this->lang->line('common_city_required'); ?>",
+			country: "<?php echo $this->lang->line('common_country_required'); ?>",
+    		email: "<?php echo $this->lang->line('common_email_required'); ?>",
+
+     		
 		}
 	});
 });
 </script>
+

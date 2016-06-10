@@ -301,7 +301,7 @@ class Employee extends Person
 	*/
 	function is_logged_in()
 	{
-		return $this->session->userdata('person_id')!=false;
+		return $this->session->userdata('person_id')!=False;
 	}
 	
 	/*

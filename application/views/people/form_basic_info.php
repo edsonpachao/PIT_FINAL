@@ -1,25 +1,103 @@
-<div class="field_row clearfix">	
-<?php echo form_label($this->lang->line('common_first_name').':', 'first_name',array('class'=>'required')); ?>
-	<div class='form_field'>
-	<?php echo form_input(array(
-		'name'=>'first_name',
-		'id'=>'first_name',
-		'value'=>$person_info->first_name)
-	);?>
-	</div>
+   <script>
+        function habilitar(value)
+        {
+            if(value=="pn")
+            {
+                // habilitamos
+             	document.getElementById("dni").disabled=false;
+             	document.getElementById("ruc").disabled=true;
+             	document.getElementById("razonsocial").disabled=true;
+             	document.getElementById("first_name").disabled=false;
+             	document.getElementById("last_name").disabled=false;
+                document.getElementById("account_number").disabled=true;
+
+            }else if(value=="pj"){
+                // deshabilitamos
+             
+                document.getElementById("dni").disabled=true;
+                document.getElementById("ruc").disabled=false;
+                document.getElementById("razonsocial").disabled=false;
+                document.getElementById("first_name").disabled=true;
+             	document.getElementById("last_name").disabled=true;
+             	document.getElementById("account_number").disabled=false;
+               
+            }
+        }
+    </script>
+
+ 
+<div class="field_row clearfix">
+<?php echo form_label($this->lang->line('common_tpcustomer').':','gender',array('class'=>'required')); ?>
+<div class='form_field'>
+
+
+
 </div>
+<input type="radio" name="gender" value="pn" onchange="habilitar(this.value);"> Persona Natural &nbsp;  &nbsp;
+<input type="radio" name="gender" value="pj" onchange="habilitar(this.value);"> Persona Juridica
+</div>
+
 <div class="field_row clearfix">	
-<?php echo form_label($this->lang->line('common_last_name').':', 'last_name',array('class'=>'required')); ?>
+<?php echo form_label($this->lang->line('common_dni').':','dni'); ?>
 	<div class='form_field'>
 	<?php echo form_input(array(
-		'name'=>'last_name',
-		'id'=>'last_name',
-		'value'=>$person_info->last_name)
+		'name'=>'dni',
+		'id'=>'dni',
+		'disabled' => 'true',
+		'value'=>$person_info->first_name)
 	);?>
 	</div>
 </div>
 
 <div class="field_row clearfix">	
+<?php echo form_label($this->lang->line('common_ruc').':','ruc'); ?>
+	<div class='form_field'>
+	<?php echo form_input(array(
+		'name'=>'ruc',
+		'id'=>'ruc',
+		'disabled' => 'true',
+		'value'=>$person_info->first_name)
+	);?>
+	</div>
+</div>
+
+<div class="field_row clearfix">	
+<?php echo form_label($this->lang->line('common_razonsocial').':','razonsocial'); ?>
+	<div class='form_field'>
+	<?php echo form_input(array(
+		'name'=>'razonsocial',
+		'id'=>'razonsocial',
+		'disabled' => 'true',
+		'value'=>$person_info->first_name)
+	);?>
+	</div>
+</div>
+
+<div class="field_row clearfix">	
+<?php echo form_label($this->lang->line('common_first_name').':','first_name',array('class'=>'required')); ?>
+	<div class='form_field'>
+	<?php echo form_input(array(
+		'name'=>'first_name',
+		'id'=>'first_name',
+		'disabled' => 'true',
+		'value'=>$person_info->first_name)
+	);?>
+	</div>
+</div>
+
+<div class="field_row clearfix">	
+<?php echo form_label($this->lang->line('common_last_name').':','last_name',array('class'=>'required')); ?>
+	<div class='form_field'>
+	<?php echo form_input(array(
+		'name'=>'last_name',
+		'id'=>'last_name',
+		'disabled' => 'true',
+		'value'=>$person_info->last_name)
+	);?>
+	</div>
+</div>
+<!--
+<div class="field_row clearfix">
 <?php echo form_label($this->lang->line('common_gender').':', 'gender',
 !empty($basic_version) ? array('class'=>'required') : array()); ?>
 	<div class='form_field'>
@@ -42,9 +120,9 @@
 	?>
 	</div>
 </div>
-
+-->
 <div class="field_row clearfix">	
-<?php echo form_label($this->lang->line('common_email').':', 'email'); ?>
+<?php echo form_label($this->lang->line('common_email').':','email',array('class'=>'required')); ?>
 	<div class='form_field'>
 	<?php echo form_input(array(
 		'name'=>'email',
@@ -55,7 +133,7 @@
 </div>
 
 <div class="field_row clearfix">	
-<?php echo form_label($this->lang->line('common_phone_number').':', 'phone_number'); ?>
+<?php echo form_label($this->lang->line('common_phone_number').':','phone_number',array('class'=>'required')); ?>
 	<div class='form_field'>
 	<?php echo form_input(array(
 		'name'=>'phone_number',
@@ -65,7 +143,7 @@
 </div>
 
 <div class="field_row clearfix">	
-<?php echo form_label($this->lang->line('common_address_1').':', 'address_1'); ?>
+<?php echo form_label($this->lang->line('common_address_1').':','address_1',array('class'=>'required')); ?>
 	<div class='form_field'>
 	<?php echo form_input(array(
 		'name'=>'address_1',
@@ -85,7 +163,7 @@
 </div>
 
 <div class="field_row clearfix">	
-<?php echo form_label($this->lang->line('common_city').':', 'city'); ?>
+<?php echo form_label($this->lang->line('common_city').':', 'city',array('class'=>'required')); ?>
 	<div class='form_field'>
 	<?php echo form_input(array(
 		'name'=>'city',
@@ -94,6 +172,7 @@
 	</div>
 </div>
 
+<!--
 <div class="field_row clearfix">	
 <?php echo form_label($this->lang->line('common_state').':', 'state'); ?>
 	<div class='form_field'>
@@ -103,7 +182,9 @@
 		'value'=>$person_info->state));?>
 	</div>
 </div>
+-->
 
+<!--
 <div class="field_row clearfix">	
 <?php echo form_label($this->lang->line('common_zip').':', 'zip'); ?>
 	<div class='form_field'>
@@ -113,9 +194,11 @@
 		'value'=>$person_info->zip));?>
 	</div>
 </div>
+-->
+
 
 <div class="field_row clearfix">	
-<?php echo form_label($this->lang->line('common_country').':', 'country'); ?>
+<?php echo form_label($this->lang->line('common_country').':','country',array('class'=>'required')); ?>
 	<div class='form_field'>
 	<?php echo form_input(array(
 		'name'=>'country',
@@ -124,6 +207,8 @@
 	</div>
 </div>
 
+
+<!--
 <div class="field_row clearfix">	
 <?php echo form_label($this->lang->line('common_comments').':', 'comments'); ?>
 	<div class='form_field'>
@@ -136,6 +221,8 @@
 	);?>
 	</div>
 </div>
+-->
+
 
 <script type='text/javascript' language="javascript">
 //validation and submit handling

@@ -1,5 +1,6 @@
 <?php 
 
+$lang["common_tpcustomer"] = "Tipo de cliente";
 $lang["common_address_1"] = "Dirección 1";
 $lang["common_address_2"] = "Dirección 2";
 $lang["common_city"] = "Ciudad";
@@ -13,10 +14,23 @@ $lang["common_print"] = "Print";
 $lang["common_det"] = "detalles";
 $lang["common_edit"] = "editar";
 $lang["common_email"] = "E-Mail";
+$lang["common_dni"] = "DNI";
+$lang["common_ruc"] = "RUC";
+$lang["common_razonsocial"] = "Razon Social";
+
 $lang["common_email_invalid_format"] = "El e-mail no está en el formato requerido";
-$lang["common_fields_required_message"] = "Los campos en rojo son requeridos";
+$lang["common_fields_required_message"] = "Los campos  en rojo (Habilitados) son requeridos";
 $lang["common_first_name"] = "Nombre";
 $lang["common_first_name_required"] = "Nombre es un campo requerido";
+
+$lang["common_tpcustomer_required"] = "Tipo de cliente es un campo requerido";
+$lang["common_phone_number_required"] = "Telefono es un campo requerido";
+$lang["common_address_1_required"] = "Direccion es un campo requerido";
+$lang["common_city_required"] = "Ciudad es un campo requerido";
+$lang["common_country_required"] = "Pais es un campo requerido";
+$lang["common_email_required"] = "Email es un campo requerido";
+
+
 $lang["common_first_page"] = "Primera";
 $lang["common_gender"] = "Género";
 $lang["common_gender_female"] = "F";
@@ -32,7 +46,7 @@ $lang["common_new"] = "Nuevo";
 $lang["common_no_persons_to_display"] = "No hay gente que mostrar";
 $lang["common_or"] = "Ó";
 $lang["common_phone_number"] = "Teléfono";
-$lang["common_phone_number_required"] = "";
+
 $lang["common_please_visit_my"] = "Por favor, visita mi";
 $lang["common_powered_by"] = "Potenciado por";
 $lang["common_price"] = "Precio";
